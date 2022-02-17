@@ -6,7 +6,7 @@ consign()
 //Para todas as chamadas then abaixo, o consign vai fazer os requires e aplicar dentro de app
 
     .then('./frontend/config/middlewares.js') 
-    .then('./frontend/statics/configStatics.js')
+    .then('./frontend/statics/configStatics.js', {checkext:false, extlist:['.js','.myextension']})
     .then('./frontend/config/router.js')
     .into(app) // E vai inserir em app. 
 
