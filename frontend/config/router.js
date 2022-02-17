@@ -1,5 +1,6 @@
-module.exports = app =>{
-    app.route('/')
-        .get(statics.configStatics.index)
+module.exports = function(app){
+    app.get('/', (req, res)=>{
+        res.render('pages/index')
+    })
 
 }
