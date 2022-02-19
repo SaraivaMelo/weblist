@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color:#e8e8f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Criar a caixa principal da logo  e seus efeitos*/
+.animateBorder{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.animateBorder::before{
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background-image: conic-gradient(#fff, transparent);
+    animation: animate 4s linear infinite;
+}
+
+.animateBorder::after{
+    content: '';
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    inset:4px;
+    background: #e8e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+@keyframes animate{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+
+    }
+}
+
+/* logotipo*/
+.animateBorder img {
+    width: 90px;
+    height: 100px;
+    margin-bottom: 5px;
+    z-index: 2;
+}
+
+
+/* Titulo */
+.animateBorder h1 {
+    color: #101010;
+    margin-top: 10px;
+    font-family: 'Righteous';
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+
+/* Formulário de login*/
