@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/login.css">
-    
     </head>
-
-    <div class="animateBorder">
-        <img src="img/logodefault.png" alt="">
-        <h1>WebList</h1>
-    </div>
+    
+    <body onload="loadForm()">
+        
+        <div class="animateBorder" id="boxLogo">
+            <img src="img/logodefault.png" alt="">
+            <h1>WebList</h1>
+        </div>
+        
+        <div class="cardForm" id="cardForm">
+            <div class="logoForm">
+                <img src="img/logodefault.png" alt="">
+                <p>WebList</p>
+            </div>
+            <div class="cardData">
+                <p>Login</p>
+                <input type="text" placeholder="Nome">
+                <input type="password" placeholder="Senha">
+            </div>
+            <button type="submit" class="btn btn-primary btn-WL">Entrar</button>
+            <a href="">
+                <span>Não tem cadastro? Clique Aqui!</span>
+            </a>
+        </div>
+        <script src="js/login.js"></script>
