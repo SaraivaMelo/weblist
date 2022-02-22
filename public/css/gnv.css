@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@500&display=swap');
+
+
+.mainItens{
+    padding:20px 70px;
+}
+
+.containerItens{
+    width: 1220px;
+}
+
+.identifierDoc, .infoClime{
+    width: 1200px;
+    height: 30px;
+
+    display: flex;
+    border: 1px solid #010101
+}
+
+.infoClime{
+    border-top: none;
+}
+.date, .board, .idOs,
+.pressure, .humidity, .temperature{
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+
+    font-family: 'Roboto';
+    font-size: 16px;
+}
+
+.date, .board,
+.pressure, .humidity{
+    width: 400px;
+    margin-left: 15px;
+    border-right: 1px solid #000;
+}
+
+.idOs,
+.temperature{
+    margin-left: 15px;
+}
+
+
+#dateDoc, #boardDoc, #osDoc,
+#pressureDoc, #humidityDoc, #temperatureDoc{
+    width: 200px;
+    height: 28px;
+    
+    border: none;
+    
+    background-color:#F0EEF0;
+
+    outline: none;
+
+    padding-left: 15px;
+
+}
+
+
+
+/* Itens de avaliação*/
+
+
+.descriptionItens{
+    width: 416px;
+    border: 1px solid #010101;
+    border-top: none;
+}
+
+.boxIdentifier{
+    display: flex;
+    font-size: 15px;
+    font-family: 'Roboto';
+    color: #fff;
+    background-color: #999
+}
+
+.numberBox{
+    padding-left: 10px;
+    padding-right: 14px;
+    border-right: 1px solid #010101;
+}
+
+.titleBox{
+    padding-left: 8px;
+}
+
+.itens{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 14px;
+    font-family: 'Roboto';
+    
+    border-top: 1px solid #000;
+
+}
+
+.groupItens{
+    display: flex;
+    height: 20px;
+}
+
+.boxIdItem{
+    border-right: 1px solid #000;
+    padding-right: 1px;
+}
+
+.boxDescription{
+    width: 325px;
+    padding-left: 5px ;
+}
+
+.boxSelect{
+    height: 19px;
+}
+
+.boxSelect select{
+    height: 19px;
+    border: none;
+    border-left: 1px solid #000;
+    outline: none;
+    text-align: center;
+
+}
+
+#inputNCValue{
+    width: 414px;
+    border: none;
+    border-top: 1px solid #000;
+    background-color:#F0EEF0;
+    display: none;
+}
