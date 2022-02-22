@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@500&display=swap');
+
+
+.mainHome{
+    padding:20px 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainCards{
+    width: 1000px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.boxCard{
+    width: 200px;
+    min-width: 200px;
+    height: 200px;
+    margin: 20px 40px;
+  
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title{
+    font-family: 'Righteous';
+    font-size: 25px;
+}
+
+.description{
+    font-family: 'Roboto';
+    font-size: 18px;
+}
+
+.redirectLink{
+    text-decoration: none;
+    color: #37589f;
+}
+
+
+#carroGnv{
+    margin-bottom: 20px;
+    background-image: url('../img/carroGnv.jpg');
+}
+
+#carroGnv .description {
+    margin-bottom: 20px;
+}
+
+#carroGnv  .title{
+    margin-top: 20px;
+}
+
+
+#antt{
+    background-image: url('../img/antt.jpg');
+    background-position-x: -50px;
+    background-position-y: 20px;
+}
+
+#antt .title{
+    margin-top: 20px;
+}
+
+#modificados{
+    background-image: url('../img/modificado.jpg'); 
+    background-position-y: 20px;
+}
+
+#modificados .title{
+    margin-top: 20px;
+}
+
+.carroSinistrado{
+    background-image: url('../img/carroSinistro.jpg'); 
+}
+
+#sinistrados .title{
+    margin-top: 15px;
+}
+
+#sinistrados .description{
+    font-family: 'Roboto';
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.sinistradosMoto{
+    background-image: url('../img/motoSinistro.jpg'); 
+}

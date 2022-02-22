@@ -1,0 +1,59 @@
+<%- include('../partials/header')%>
+<div class="mainItens">
+    <div class="containerItens">
+
+        <div class="identifierDoc">
+            <div class="date">
+                <p>Data:</p>
+                <input type="text" name="dateDoc" id="dateDoc" placeholder="Informe a Data">
+            </div>
+            <div class="board">
+                <p>Placa:</p>
+                <input type="text" name="boardDoc" id="boardDoc" placeholder="Informe a Placa">
+            </div>
+            <div class="idOs">OS:</div>
+            <input type="text" name="osDoc" id="osDoc" placeholder="Informe o n° da OS">
+        </div>
+
+        <div class="infoClime">
+            <div class="pressure">
+                <p>Pressão Atmosférica:</p>
+                <input type="text" name="pressureValue" id="pressureDoc" placeholder="Informe a pressão atmosférica">
+            </div>
+            <div class="humidity">
+                <p>Umidade Relativa do ar(%):</p>
+                <input type="text" name="humiditValue" id="humidityDoc" placeholder="Informe a umidade relativa">
+            </div>
+            <div class="temperature"> 
+                <p>Temperatura (C°)</p>
+                <input type="text" name="temperatureValue" id="temperatureDoc" placeholder="Informe a temperatura">
+            </div>
+        </div>
+        
+        <div class="descriptionItens">
+            <div class="boxIdentifier">
+                <div class="numberBox">01</div>
+                <div class="titleBox">IDENTIFICAÇÃO DA AMOSTRA</div>
+            </div>
+            <div class="itens">
+                   <div class="groupItens">
+                        <div class="boxIdItem">01.01</div>
+                        <div class="boxDescription">ITEM DE REPROVAÇÃO</div>
+                        <div class="boxSelect" onclick="sendNC()">
+                            <select name="" id="">
+                                <option value=""></option>
+                                <option value="ap">/</option>
+                                <option value="nc">R</option>
+                                <option value="na">NA</option>
+                                <option value="nd">ND</option>
+                            </select>
+                        </div>
+                   </div>
+                   <div class="ncValue">
+                       <input type="text" id="inputNCValue">
+                   </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/inputData.js"></script>
+</div>
