@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    /* height: 100vh; */
+    background-color:#F0EEF0;
+    display: flex;
+}
+
+.containerMain{
+    display: flex;
+    flex-direction: column;
+}
+.headerMain{
+    width:100%;
+}
+
+.navbarMain{
+    background-color: #37589F;
+    
+    width:100%;
+    height: 60px;
+    padding:20px 70px;
+    margin:auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.nameOrganization{
+    color: #F0EEF0;
+    font-family:'Righteous';
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+.dataGroup{
+    display: flex;
+    color: #F0EEF0;
+    font-size: 1.2rem;
+    font-family: 'Roboto';
+}
+
+.logoutBtn{
+    margin-left: 20px;
+}
+
+.logoutBtn a{
+    color: #F0EEF0;
+    list-style: none;
+    text-decoration: none;
+}

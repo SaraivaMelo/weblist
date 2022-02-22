@@ -1,4 +1,8 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +11,8 @@
 body{
     width: 100vw;
     height: 100vh;
-    background-color:#e8e8f0;
+    /* background-color:#e8e8f0; */
+    background-color:#F0EEF0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +47,8 @@ body{
     width: 190px;
     height: 190px;
     inset:4px;
-    background: #e8e8f0;
+    /* background: #e8e8f0; */
+    background: #F0EEF0;
     border-radius: 16px;
     overflow: hidden;
 }
@@ -79,3 +85,69 @@ body{
 
 
 /* Formulário de login*/
+
+.cardForm{
+    width: 300px;
+    height: 340px;
+    background: #FFFDFF;
+    display: none;
+    flex-direction: column;
+    border-radius: 4px;
+}
+
+    .logoForm{
+        width: 100%;
+        height: 40px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logoForm img {
+        width: 30px;
+        height: 40px;
+        margin-right: 5px;
+    }
+    .logoForm p {
+        font-family: 'Righteous';
+        font-size: 30px;
+        margin-left: 5px;
+    }
+
+
+    .cardData{
+        width: 100%;
+        height: 100px;
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .cardData p {
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    .cardData input{
+        width: 250px;
+        height: 25px;
+        margin-top: 10px;
+        border:1px solid #bbb;
+        padding: 3px 8px;
+        outline: none;
+    }
+    .cardForm button{
+        width: 70px;
+        height: 40px;
+        align-self: flex-end;
+        margin-top: 30px;
+        margin-right: 26px;
+    }
+
+    .cardForm a {
+        align-self: center;
+        margin-top: 35px;
+    }
