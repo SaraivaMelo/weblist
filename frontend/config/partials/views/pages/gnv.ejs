@@ -35,12 +35,13 @@
                 <div class="numberBox">01</div>
                 <div class="titleBox">IDENTIFICAÇÃO DA AMOSTRA</div>
             </div>
+
             <div class="itens">
                    <div class="groupItens">
                         <div class="boxIdItem">01.01</div>
                         <div class="boxDescription">ITEM DE REPROVAÇÃO</div>
-                        <div class="boxSelect" onclick="sendNC()">
-                            <select name="" id="">
+                        <div class="boxSelect">
+                            <select name="" id="valueSelect" onclick="sendNC()">
                                 <option value=""></option>
                                 <option value="ap">/</option>
                                 <option value="nc">R</option>
@@ -51,8 +52,31 @@
                    </div>
                    <div class="ncValue">
                        <input type="text" id="inputNCValue">
+                       <div class="addNC" onclick="checkSize()"></div>
                    </div>
             </div>
+            
+
+            <div class="itens">
+                <div class="groupItens">
+                     <div class="boxIdItem">01.02</div>
+                     <div class="boxDescription">Proteção térmica(fonte de
+                        emissão <  100 mm) </div>
+                     <div class="boxSelect">
+                         <select name="" id="valueSelect" onclick="sendNC()">
+                             <option value=""></option>
+                             <option value="ap">/</option>
+                             <option value="nc">R</option>
+                             <option value="na">NA</option>
+                             <option value="nd">ND</option>
+                         </select>
+                     </div>
+                </div>
+                <div class="ncValue">
+                    <input type="text" id="">
+                    <div class="addNC" onclick="checkSize()"></div>
+                </div>
+         </div>
         </div>
     </div>
     <script src="js/inputData.js"></script>
