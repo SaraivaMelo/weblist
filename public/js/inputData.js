@@ -1,30 +1,78 @@
+let paper = []
 
-function sendNC(){
-   let valueSelect =  document.querySelector('#valueSelect').value
+function getIdBox(boxIdItem){
 
-   if(valueSelect === "nc"){
-       document.querySelector('.ncValue').style.display = 'flex'
+    // recebe o id do boxIdItem
+    let idBox = boxIdItem 
+    // Recebe o conteúdo do value que tem no select 
+    let valueSelect = document.getElementById(idBox).value 
+ 
+    if(valueSelect === 'ap' || valueSelect === 'na' || valueSelect === 'nd' ){
+        writePaper(valueSelect, idBox)
+    } else if(valueSelect === 'nc'){
+        showInput(valueSelect, idBox)
     }else{
-       document.querySelector('.ncValue').style.display = 'none'
-   }
-
+       blockSave(idBox)
+    }
+   
 }
 
 
-// if(sizeInput.search('/[@]/g')) {
-//     paper.push(sizeInput.value)
-// }
+
+function showInput(vs, id){
+
+    let divInput = document.getElementsByClassName('ncValue')
+
+    
+    Array.from(divInput).forEach(e => {
+
+        let dataKeyValues = e.getAttribute('data-key')
+        
+        if(dataKeyValues === id){
+        //    let showId = dataKeyValues
+            
+            dataKeyValues.target.style.display = "flex"
+          
+        }
+        
+    })
+
+    //    if(vs === "nc"){
+    //         let inp = document.querySelector('.ncValue').getAttribute(`data-key${id}`)
+    //         console.log(inp)
+    //     }else{
+    //         document.querySelector('.ncValue').style.display = 'none'
+    //     }
+}
+
+
+
+
+function writePaper(vs, id){
+    console.log('write ' + vs, id)
+}
+
+
+
+function blockSave(idBox){
+    console.log(idBox)
+}
+
+
+
 
 function checkSize(){
-    let paper = []
-    let sizeInput = document.querySelector("#inputNCValue").value
+console.log('chamou')    
+    
+    // let sizeInput = document.getElementsByTagName(`input > ${id}`).value
+    // console.log(sizeInput)
 
-    if(sizeInput.length > 10){
-        document.querySelector(".addNC").style.background = "#008000"
-        document.querySelector('.ncValue').style.display = 'none'
-        paper.push(sizeInput)
-        insertNC(paper)
-    }
+    // if(sizeInput.length > 10){
+    //     document.querySelector(".addNC").style.background = "#008000"
+    //     document.querySelector('.ncValue').style.display = 'none'
+    //     paper.push(sizeInput)
+    //     insertNC(paper)
+    // }
 }
 
 

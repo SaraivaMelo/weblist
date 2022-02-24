@@ -41,7 +41,7 @@
                         <div class="boxIdItem">01.01</div>
                         <div class="boxDescription">ITEM DE REPROVAÇÃO</div>
                         <div class="boxSelect">
-                            <select name="" id="valueSelect" onclick="sendNC()">
+                            <select name="" id="01.01" onchange="getIdBox('01.01')"  >
                                 <option value=""></option>
                                 <option value="ap">/</option>
                                 <option value="nc">R</option>
@@ -50,8 +50,8 @@
                             </select>
                         </div>
                    </div>
-                   <div class="ncValue">
-                       <input type="text" id="inputNCValue">
+                   <div class="ncValue" data-key="01.01">
+                       <input type="text" class="inputNCValue" >
                        <div class="addNC" onclick="checkSize()"></div>
                    </div>
             </div>
@@ -63,7 +63,7 @@
                      <div class="boxDescription">Proteção térmica(fonte de
                         emissão <  100 mm) </div>
                      <div class="boxSelect">
-                         <select name="" id="valueSelect" onclick="sendNC()">
+                         <select name="" id="01.02" onchange="getIdBox('01.02')" >
                              <option value=""></option>
                              <option value="ap">/</option>
                              <option value="nc">R</option>
@@ -72,8 +72,8 @@
                          </select>
                      </div>
                 </div>
-                <div class="ncValue">
-                    <input type="text" id="">
+                <div class="ncValue" data-key="01.02">
+                    <input type="text" class="inputNCValue" >
                     <div class="addNC" onclick="checkSize()"></div>
                 </div>
          </div>
