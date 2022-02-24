@@ -22,16 +22,14 @@ function getIdBox(boxIdItem){
 function showInput(vs, id){
 
     let divInput = document.getElementsByClassName('ncValue')
-
+    
     
     Array.from(divInput).forEach(e => {
 
         let dataKeyValues = e.getAttribute('data-key')
         
         if(dataKeyValues === id){
-        //    let showId = dataKeyValues
-            
-            dataKeyValues.target.style.display = "flex"
+           let showId = dataKeyValues
           
         }
         
