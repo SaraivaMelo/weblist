@@ -6,41 +6,31 @@ function getIdBox(boxIdItem){
     let idBox = boxIdItem 
     // Recebe o conteúdo do value que tem no select 
     let valueSelect = document.getElementById(idBox).value 
+
+
+    console.log(valueSelect)
  
     if(valueSelect === 'ap' || valueSelect === 'na' || valueSelect === 'nd' ){
+        document.querySelector(`[written="${idBox}"]`).value = ""
+        changeInput(idBox)
         writePaper(valueSelect, idBox)
     } else if(valueSelect === 'nc'){
         showInput(valueSelect, idBox)
     }else{
-       blockSave(idBox)
+    //    blockSave(idBox)
     }
    
 }
 
 
 
-function showInput(vs, id){
-
-    let divInput = document.getElementsByClassName('ncValue')
-    
-    
-    Array.from(divInput).forEach(e => {
-
-        let dataKeyValues = e.getAttribute('data-key')
-        
-        if(dataKeyValues === id){
-           let showId = dataKeyValues
-          
-        }
-        
-    })
-
-    //    if(vs === "nc"){
-    //         let inp = document.querySelector('.ncValue').getAttribute(`data-key${id}`)
-    //         console.log(inp)
-    //     }else{
-    //         document.querySelector('.ncValue').style.display = 'none'
-    //     }
+function showInput(vs, inputId){
+    let key = document.querySelector(`[key="${inputId}"]`)
+    key.classList.add('active')
+    let insertNC = document.querySelector(`[written="${inputId}"]`).value
+    paper.push(insertNC)
+    insertNC = ""
+    console.log(paper)
 }
 
 
@@ -59,20 +49,18 @@ function blockSave(idBox){
 
 
 
-function checkSize(){
-console.log('chamou')    
-    
-    // let sizeInput = document.getElementsByTagName(`input > ${id}`).value
-    // console.log(sizeInput)
-
-    // if(sizeInput.length > 10){
-    //     document.querySelector(".addNC").style.background = "#008000"
-    //     document.querySelector('.ncValue').style.display = 'none'
-    //     paper.push(sizeInput)
-    //     insertNC(paper)
-    // }
+function closeInput(closeId){
+    let insed = document.querySelector(`[written="${closeId}"]`).value
+    if(insed){
+        let key = document.querySelector(`[key="${closeId}"]`)
+        key.classList.remove('active')
+    }
 }
 
+function changeInput(changeId){
+    let key = document.querySelector(`[key="${changeId}"]`)
+    key.classList.remove('active')
+}
 
 function insertNC(paper){
     console.log(paper)
