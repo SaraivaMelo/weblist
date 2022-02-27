@@ -1,4 +1,6 @@
-let paper = []
+let blankPaper = []
+let writeOnPaper = []
+let ncKey = 0;
 
 function getIdBox(boxIdItem){
 
@@ -7,8 +9,6 @@ function getIdBox(boxIdItem){
     // Recebe o conteúdo do value que tem no select 
     let valueSelect = document.getElementById(idBox).value 
 
-
-    console.log(valueSelect)
  
     if(valueSelect === 'ap' || valueSelect === 'na' || valueSelect === 'nd' ){
         document.querySelector(`[written="${idBox}"]`).value = ""
@@ -24,13 +24,37 @@ function getIdBox(boxIdItem){
 
 
 
+
+
+
 function showInput(vs, inputId){
+    
     let key = document.querySelector(`[key="${inputId}"]`)
     key.classList.add('active')
     let insertNC = document.querySelector(`[written="${inputId}"]`).value
-    paper.push(insertNC)
-    insertNC = ""
-    console.log(paper)
+    
+    
+    
+    if(insertNC != ""){
+        let data = inputId.concat(` ${insertNC}`)
+        let dataKey = data.split('@')
+        
+        // let idData = blankPaper.identifier
+        // console.log(idData)
+
+        // ncKey++
+       
+
+
+        blankPaper.push({
+            identifier:ncKey,
+            idForm: dataKey[0],
+            description: dataKey[dataKey.length - 1]
+        })
+        console.log(blankPaper)
+
+        // recordData(blankPaper)        
+    }
 }
 
 
@@ -62,6 +86,7 @@ function changeInput(changeId){
     key.classList.remove('active')
 }
 
-function insertNC(paper){
-    console.log(paper)
+function recordData(writeOnDB){
+    writeOnPaper.push(writeOnDB)
+    console.log(writeOnPaper)
 }
