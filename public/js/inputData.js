@@ -1,7 +1,9 @@
-let blankPaper = []
-let writeOnPaper = []
+let blankPaper = [] // Formulário Vazio. Será adicionado aqui as não conformes para depois ser enviadas ao banco
+let writeOnPaper = [] // Dados a ser gravados no DB
 let dataKey = []
-let registerId = 0;
+let registerId = 0; 
+let idOBJ = 0
+let identifier;
 
 function getIdBox(boxIdItem){
   
@@ -52,67 +54,53 @@ function showInput(vs, inputId){
 
 function closeInput(closeId){
 
-    let insed = document.querySelector(`[written="${closeId}"]`).value
+        let insed = document.querySelector(`[written="${closeId}"]`).value
 
-    if(insed){
-        let key = document.querySelector(`[key="${closeId}"]`)
-        key.classList.remove('active')
+        if(insed){
+            let key = document.querySelector(`[key="${closeId}"]`)
+            key.classList.remove('active')
+            
+        }
         
-    }
-
-
-    let inserted = dataKey.findIndex(( item) => item.registerId == registerId)
-
-    if(inserted == -1){
         let notConform = document.querySelector(`[written="${closeId}"]`).value
-    
-        notConform != "" ? registerNC(closeId, notConform) : ""
-    }
- 
-  
 
+        notConform != "" ? registerNC(closeId, notConform ) : ""
 }
+
 
 
 
 
 function registerNC( id, nc){
-
     let data = id.concat(` ${nc}`)
     let itemForm = dataKey[0]
-    let formLength = dataKey.length
-    console.log(` Recebi do DB ${formLength} itens no array `)
     dataKey = data.split('@')
     
     if(itemForm !== dataKey[0]){
         registerId ++
     }
+
+    idOBJ++
     
     dataKey.push(registerId)
-    
-    
-    console.log(dataKey.length)    
-   
-    
-    if(formLength != dataKey.length){
-       
-        blankPaper.push({
-            identifier: registerId,
-            idForm: dataKey[0],
-            description: dataKey[dataKey.length - 2]
-        })
 
-    }
+    blankPaper.push({
+        idOBJ,
+        idForm: dataKey[0],
+        description: dataKey[dataKey.length - 2]
+    })
 
-    console.log(blankPaper)
+    getDescription(blankPaper)
 
-    // recordData(blankPaper)        
 }
 
 
+function getDescription(data){
+   console.log(data)
+}
 
 
-
+// TENTAR REMOVER A DUPLICIDADE USANDO O hasOwnProperty - VER NA INTERNET
 
 
 
