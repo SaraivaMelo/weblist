@@ -1,9 +1,11 @@
+
 let blankPaper = [] // Formulário Vazio. Será adicionado aqui as não conformes para depois ser enviadas ao banco
-let writeOnPaper = [] // Dados a ser gravados no DB
 let dataKey = []
+
 let registerId = 0; 
 let idOBJ = 0
-let identifier;
+
+
 
 function getIdBox(boxIdItem){
   
@@ -51,20 +53,18 @@ function showInput(vs, inputId){
     
 }
 
-
 function closeInput(closeId){
 
         let insed = document.querySelector(`[written="${closeId}"]`).value
-
+        // console.log(insed)
         if(insed){
             let key = document.querySelector(`[key="${closeId}"]`)
             key.classList.remove('active')
             
         }
-        
-        let notConform = document.querySelector(`[written="${closeId}"]`).value
+     
+        registerNC(closeId,insed)
 
-        notConform != "" ? registerNC(closeId, notConform ) : ""
 }
 
 
@@ -75,7 +75,7 @@ function registerNC( id, nc){
     let data = id.concat(` ${nc}`)
     let itemForm = dataKey[0]
     dataKey = data.split('@')
-    
+   
     if(itemForm !== dataKey[0]){
         registerId ++
     }
@@ -84,23 +84,31 @@ function registerNC( id, nc){
     
     dataKey.push(registerId)
 
+  
     blankPaper.push({
         idOBJ,
         idForm: dataKey[0],
-        description: dataKey[dataKey.length - 2]
+        description:dataKey[dataKey.length - 2]
     })
 
-    getDescription(blankPaper)
-
+    console.log(blankPaper)
+    // getDescription(blankPaper)
 }
 
 
-function getDescription(data){
-   console.log(data)
-}
+// function getDescription(blankPaper, desc){
+//     this.blankPaper = blankPaper
+    
+//     for(let i = 0; i < this.blankPaper.length; i++){
+//         if(this.blankPaper[i].description == desc)
+//             this.blankPaper.splice(i, 1)
+//     }
+
+//     console.log(blankPaper)
+// }
 
 
-// TENTAR REMOVER A DUPLICIDADE USANDO O hasOwnProperty - VER NA INTERNET
+
 
 
 
