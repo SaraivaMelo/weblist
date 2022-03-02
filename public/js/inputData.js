@@ -1,141 +1,64 @@
+class NaoConformidade{
+    constructor(){
+        this.idNC = 0;
+        this.arrayPaper = [];
 
-let blankPaper = [] // Formulário Vazio. Será adicionado aqui as não conformes para depois ser enviadas ao banco
-let dataKey = []
-
-let registerId = 0; 
-let idOBJ = 0
-
-
-
-function getIdBox(boxIdItem){
-  
-    // RECEBE O IDENTIFICADO DO boxIdItem, QUE PODE SER 01.01 OU 02.01 OU 03.01 E ETC 
-    let idBox = boxIdItem 
-   
-    // RECEBE O CONTEUDO DO SELECT QUE PODE SER NC OU AP OU / OU  ND OU NA
-    let valueSelect = document.getElementById(idBox).value 
+    }
 
 
+    getId(id){
+       
+        let result = document.getElementById(id).value  
 
-
- 
-    if(valueSelect === 'ap' || valueSelect === 'na' || valueSelect === 'nd' ){
-        document.querySelector(`[written="${idBox}"]`).value = ""
-        changeInput(idBox)
-    } else if(valueSelect === 'nc'){
-        let key = document.querySelector(`[key="${idBox}"]`)
-        let show = key.classList.value
-        if(show === 'ncValue'){
-            showInput(valueSelect, idBox)
+        if(result == "NC"){
+            let icon = document.querySelector(`[key="${id}"]`)
+            icon.classList.add('active')
         }
-    }
-   
-}
-
-
-
-function showInput(vs, inputId){
-
-    let key = document.querySelector(`[key="${inputId}"]`)
-    key.classList.add('active')
-
-    let inserted = dataKey.findIndex(( item) => item.registerId == registerId)
-   
-    if(inserted != -1){
-        let notConform = document.querySelector(`[written="${inputId}"]`).value
-
-        notConform != "" ? registerNC(inputId, notConform ) : ""
-    }
-      
-    
-
-   
-    
-}
-
-function closeInput(closeId){
-
-        let insed = document.querySelector(`[written="${closeId}"]`).value
-        // console.log(insed)
-        if(insed){
-            let key = document.querySelector(`[key="${closeId}"]`)
-            key.classList.remove('active')
-            
+        if(result == "NC"){
+            let selectBG = document.getElementById(id)
+            if(selectBG.classList.contains('bg')){
+                selectBG.classList.remove('bg')
+            }
         }
-     
-        registerNC(closeId,insed)
 
-}
-
-
-
-
-
-function registerNC( id, nc){
-    let data = id.concat(` ${nc}`)
-    let itemForm = dataKey[0]
-    dataKey = data.split('@')
-   
-    if(itemForm !== dataKey[0]){
-        registerId ++
     }
 
-    idOBJ++
     
-    dataKey.push(registerId)
 
-  
-    blankPaper.push({
-        idOBJ,
-        idForm: dataKey[0],
-        description:dataKey[dataKey.length - 2]
-    })
+    getData(desc, id){
+        this.idNC++
+        let paper = {}
 
-    console.log(blankPaper)
-    // getDescription(blankPaper)
+        paper.id = this.idNC
+        paper.idItem = id
+        paper.description = desc
+
+        this.arrayPaper.push(paper)
+        console.log(this.arrayPaper)
+        
+    }
+    
+    
+    
+    closeInput(id){
+
+        let icon = document.querySelector(`[key="${id}"]`)
+        icon.classList.remove('active')
+        
+        let desc =  document.querySelector(`[written="${id}"]`).value
+        if(desc !== ""){
+            let selectBG = document.getElementById(id)
+            selectBG.classList.add('bg')
+        }
+        if(desc === ""){
+            alert("Item Reprovado! Por favor, adicionar a NC.")
+            document.getElementById(id).value = "" 
+        }
+
+        this.getData(desc, id)
+    }
+
+
 }
 
-
-// function getDescription(blankPaper, desc){
-//     this.blankPaper = blankPaper
-    
-//     for(let i = 0; i < this.blankPaper.length; i++){
-//         if(this.blankPaper[i].description == desc)
-//             this.blankPaper.splice(i, 1)
-//     }
-
-//     console.log(blankPaper)
-// }
-
-
-
-
-
-
-
-
-
-
-// function writePaper(vs, id){
-//     console.log('write ' + vs, id)
-// }
-
-
-
-// function blockSave(idBox){
-//     console.log(idBox)
-// }
-
-
-
-
-
-function changeInput(changeId){
-    let key = document.querySelector(`[key="${changeId}"]`)
-    key.classList.remove('active')
-}
-
-// function recordData(writeOnDB){
-//     writeOnPaper.push(writeOnDB)
-//     console.log(writeOnPaper)
-// }
+let nc = new NaoConformidade();
