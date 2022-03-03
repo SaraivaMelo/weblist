@@ -33,7 +33,8 @@
         <div class="descriptionItens">
             <div class="boxIdentifier">
                 <div class="numberBox">01</div>
-                <div class="titleBox">IDENTIFICAÇÃO DA AMOSTRA</div>
+                <div class="titleBox">IDENTIFICAÇÃO DA AMOSTRA </div>
+                <p class="getModal" onclick="openModal()"></p>
             </div>
 
             <div class="itens">
@@ -77,6 +78,16 @@
                     <div class="addNC" onclick="nc.closeInput('01.02')"></div>
                 </div>
          </div>
+        </div>
+    </div>
+    <div class="modalContainer" id="modal">
+        <div class="modal">
+            <div class="titleModal">Observações</div>
+            <div class="ncInserted">
+                <div class="ncId"></div>
+                <div class="modaldescription"></div>
+            </div>
+            <button class="closeModal" onclick="closeModal()">X</button>
         </div>
     </div>
     <script src="js/inputData.js"></script>

@@ -29,12 +29,17 @@ class NaoConformidade{
         this.idNC++
         let paper = {}
 
+        let item = desc.split('@')
+        item = item[item.length - 1]
+
+      
         paper.id = this.idNC
         paper.idItem = id
-        paper.description = desc
+        paper.description = item
 
         this.arrayPaper.push(paper)
-        console.log(this.arrayPaper)
+
+        this.validate(this.arrayPaper)
         
     }
     
@@ -58,7 +63,33 @@ class NaoConformidade{
         this.getData(desc, id)
     }
 
+    
+    validate(data){
+        let contents;
+        let idforDelete;
+       for(let i = 0; i< data.length; i++){
+           contents = data[i].description
+           console.log(contents)
+        }
+
+        console.log(data)
+    }
+
 
 }
 
 let nc = new NaoConformidade();
+
+
+
+
+
+
+
+function openModal(){
+    document.querySelector('.modalContainer').style.display = 'flex'
+}
+
+function closeModal(){
+    document.querySelector('.modalContainer').style.display = 'none'
+}
