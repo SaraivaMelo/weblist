@@ -224,8 +224,20 @@
 
 .ncInserted{
     display: flex;
+    flex-direction: column;
 }
 
+.itensGroup{
+    display: flex;
+}
+
+#delete{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    border-top: none;
+    border-left: none;
+}
 .ncId{
     width: 50px;
     display: flex;

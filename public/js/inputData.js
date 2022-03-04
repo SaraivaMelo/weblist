@@ -39,12 +39,24 @@ class NaoConformidade{
 
         this.arrayPaper.push(paper)
 
-        this.validate(this.arrayPaper)
         
+        this.updateModal(this.arrayPaper)
     }
     
     
     
+    updateModal(data){
+            this.cleanModal();
+            data.forEach( item => this.show(item));
+    }
+
+
+    clickItem(el){
+        let btn = el.target;
+        console.log(btn.dataset.indice)
+    }
+
+
     closeInput(id){
 
         let icon = document.querySelector(`[key="${id}"]`)
@@ -61,24 +73,36 @@ class NaoConformidade{
         }
 
         this.getData(desc, id)
+
     }
 
+
+
+    show(item){
+        const div = document.createElement('div');
+        div.classList.add('itensGroup');
+        div.innerHTML = `
+            <div class="ncId" id="ncId" data-indice=${item.id}>${item.idItem}</div>
+            <div class="modaldescription" id="modaldescription">${item.description}</div>
+            <img src="img/excluir.png" alt="Delete" id="delete" data-indice=${item.id}>
+            `
+            document.getElementById('ncInserted').appendChild(div)
+            document.getElementById('delete').addEventListener('click', nc.clickItem)
+
+    }  
     
-    validate(data){
-        let contents;
-        let idforDelete;
-       for(let i = 0; i< data.length; i++){
-           contents = data[i].description
-           console.log(contents)
+    cleanModal(){
+        const ncInsert = document.getElementById('ncInserted')
+        while(ncInsert.firstChild){
+            ncInsert.removeChild(ncInsert.lastChild);
         }
-
-        console.log(data)
     }
-
+ 
 
 }
 
 let nc = new NaoConformidade();
+
 
 
 
@@ -93,3 +117,4 @@ function openModal(){
 function closeModal(){
     document.querySelector('.modalContainer').style.display = 'none'
 }
+
