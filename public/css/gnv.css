@@ -3,31 +3,30 @@
 
 
 .mainItens{
-    padding:20px 70px;
+    padding:10px 50px;
 }
 
 .containerItens{
-    width: 1220px;
+    width: 1200px;
 }
 
 .identifierDoc, .infoClime{
     width: 1200px;
     height: 30px;
-
     display: flex;
-    border: 1px solid #010101
+    border: 1px solid #010101;
 }
 
 .infoClime{
     border-top: none;
 }
+
+
 .date, .board, .idOs,
 .pressure, .humidity, .temperature{
     height: 100%;
-    
     display: flex;
     align-items: center;
-
     font-family: 'Roboto';
     font-size: 16px;
 }
@@ -60,7 +59,9 @@
 
 }
 
-
+.containerMobile{
+    display: none;
+}
 
 /* Itens de avaliação*/
 

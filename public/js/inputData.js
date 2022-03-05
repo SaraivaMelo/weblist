@@ -51,11 +51,11 @@ class NaoConformidade{
     }
 
 
-    clickItem(el){
-        let btn = el.target;
-        console.log(btn.dataset.indice)
+    deleteItem(index){
+        let del = index-1
+        this.arrayPaper.splice(del, 1);
+        this.updateModal(this.arrayPaper)
     }
-
 
     closeInput(id){
 
@@ -84,10 +84,9 @@ class NaoConformidade{
         div.innerHTML = `
             <div class="ncId" id="ncId" data-indice=${item.id}>${item.idItem}</div>
             <div class="modaldescription" id="modaldescription">${item.description}</div>
-            <img src="img/excluir.png" alt="Delete" id="delete" data-indice=${item.id}>
+            <img src="img/excluir.png" alt="Delete" id="delete" onclick="nc.deleteItem(${item.id})">
             `
             document.getElementById('ncInserted').appendChild(div)
-            document.getElementById('delete').addEventListener('click', nc.clickItem)
 
     }  
     
@@ -102,13 +101,6 @@ class NaoConformidade{
 }
 
 let nc = new NaoConformidade();
-
-
-
-
-
-
-
 
 function openModal(){
     document.querySelector('.modalContainer').style.display = 'flex'

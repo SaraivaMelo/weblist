@@ -1,0 +1,67 @@
+@media screen and (max-width: 375px){
+    .headerMain{
+        width:100%;
+    }
+    .navbarMain{
+        max-width: 358px;
+        padding: 0px 12px 0px 5px;
+        position: fixed;
+        
+    }
+    .nameOrganization{
+        margin-left: 15px;
+    }
+    
+    .dataGroup{
+      margin-right: 10px;
+    }
+
+    .mainItens{
+        padding:0;
+        margin-top: 60px;
+    }
+
+    .containerItens{
+        width: 360px;
+    }
+    
+    .identifierDoc, .infoClime{
+        display: none;
+    }
+
+    .containerMobile{
+        display: flex;
+        width: 100%;
+    }
+
+    .infosBasic{
+        width: 360px;
+        display: flex;
+        flex-direction: column;
+    }
+    .basics{
+        display: flex;
+    }
+    .dateMobile, .boardMobile, .idOsMobile, .pressureMobile{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Roboto';
+    }
+   
+    .dateMobile, .idOsMobile{
+        margin-left: 20px;
+    }
+    #dateDoc, #boardDoc, #osDoc,
+    #pressureDoc, #humidityDoc, #temperatureDoc{
+       width: 105px;
+
+    }
+    
+   .pressureMobile{
+       margin-left: 13px;
+   }
+    #pressureDoc{
+        width: 80px;
+    }
+}

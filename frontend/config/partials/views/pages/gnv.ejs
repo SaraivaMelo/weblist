@@ -2,6 +2,7 @@
 <div class="mainItens">
     <div class="containerItens">
 
+        <!-- CABEÇALHO DESKTOP  -->
         <div class="identifierDoc">
             <div class="date">
                 <p>Data:</p>
@@ -11,8 +12,9 @@
                 <p>Placa:</p>
                 <input type="text" name="boardDoc" id="boardDoc" placeholder="Informe a Placa">
             </div>
-            <div class="idOs">OS:</div>
-            <input type="text" name="osDoc" id="osDoc" placeholder="Informe o n° da OS">
+            <div class="idOs">OS:
+                <input type="text" name="osDoc" id="osDoc" placeholder="Informe o n° da OS">
+            </div>
         </div>
 
         <div class="infoClime">
@@ -29,55 +31,80 @@
                 <input type="text" name="temperatureValue" id="temperatureDoc" placeholder="Informe a temperatura">
             </div>
         </div>
-        
-        <div class="descriptionItens">
-            <div class="boxIdentifier">
-                <div class="numberBox">01</div>
-                <div class="titleBox">IDENTIFICAÇÃO DA AMOSTRA </div>
-                <p class="getModal" onclick="openModal()"></p>
-            </div>
 
-            <div class="itens">
-                   <div class="groupItens">
-                        <div class="boxIdItem">01.01</div>
-                        <div class="boxDescription">ITEM DE REPROVAÇÃO</div>
-                        <div class="boxSelect">
-                            <select name="" id="01.01" onclick="nc.getId('01.01')">
-                                <option value=""></option>
-                                <option value="-">/</option>
-                                <option value="NC">R</option>
-                                <option value="NA">NA</option>
-                                <option value="ND">ND</option>
-                            </select>
+        <!-- CABEÇALHO MOBILE  -->
+        <div class="containerMobile">
+            <div class="infosBasic">
+                <div class="basics">
+                        <div class="dateMobile">
+                            <p>Data:</p>
+                            <input type="text" name="dateDoc" id="dateDoc" placeholder="Digite Aqui">
                         </div>
-                   </div>
-                   <div class="ncValue" key="01.01">
-                       <input type="text" class="inputNCValue"  written="01.01">
-                       <div class="addNC" onclick="nc.closeInput('01.01')"></div>
-                   </div>
+                        <div class="boardMobile">
+                            <p>Placa:</p>
+                            <input type="text" name="boardDoc" id="boardDoc" placeholder="Digite Aqui">
+                        </div>
+                </div>
+                <div class="basics">
+                    <div class="idOsMobile">OS:
+                        <input type="text" name="osDoc" id="osDoc" placeholder="Digite Aqui">
+                    </div>
+                    <div class="pressureMobile">
+                        <p>Pressão:</p>
+                        <input type="text" name="pressureValue" id="pressureDoc" placeholder="Digite Aqui">
+                    </div>
             </div>
-            
+            </div>
+        </div>
+<!--         
+            <div class="descriptionItens">
+                    <div class="boxIdentifier">
+                        <div class="numberBox">01</div>
+                        <div class="titleBox">IDENTIFICAÇÃO DA AMOSTRA </div>
+                        <p class="getModal" onclick="openModal()"></p>
+                    </div>
 
-            <div class="itens">
-                <div class="groupItens">
-                     <div class="boxIdItem">01.02</div>
-                     <div class="boxDescription">Proteção térmica(fonte de
-                        emissão <  100 mm) </div>
-                     <div class="boxSelect">
-                         <select name="" id="01.02" onclick="nc.getId('01.02')">
-                             <option value=""></option>
-                             <option value="-">/</option>
-                             <option value="NC">R</option>
-                             <option value="NA">NA</option>
-                             <option value="ND">ND</option>
-                         </select>
-                     </div>
-                </div>
-                <div class="ncValue" key="01.02">
-                    <input type="text" class="inputNCValue" written="01.02" >
-                    <div class="addNC" onclick="nc.closeInput('01.02')"></div>
-                </div>
-         </div>
+                    <div class="itens">
+                        <div class="groupItens">
+                                <div class="boxIdItem">01.01</div>
+                                <div class="boxDescription">ITEM DE REPROVAÇÃO</div>
+                                <div class="boxSelect">
+                                    <select name="" id="01.01" onclick="nc.getId('01.01')">
+                                        <option value=""></option>
+                                        <option value="-">/</option>
+                                        <option value="NC">R</option>
+                                        <option value="NA">NA</option>
+                                        <option value="ND">ND</option>
+                                    </select>
+                                </div>
+                        </div>
+                        <div class="ncValue" key="01.01">
+                            <input type="text" class="inputNCValue"  written="01.01">
+                            <div class="addNC" onclick="nc.closeInput('01.01')"></div>
+                        </div>
+                    </div>
+                
+
+                    <div class="itens">
+                            <div class="groupItens">
+                                <div class="boxIdItem">01.02</div>
+                                <div class="boxDescription">Proteção térmica(fonte de
+                                    emissão <  100 mm) </div>
+                                <div class="boxSelect">
+                                    <select name="" id="01.02" onclick="nc.getId('01.02')">
+                                        <option value=""></option>
+                                        <option value="-">/</option>
+                                        <option value="NC">R</option>
+                                        <option value="NA">NA</option>
+                                        <option value="ND">ND</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="ncValue" key="01.02">
+                                <input type="text" class="inputNCValue" written="01.02" >
+                                <div class="addNC" onclick="nc.closeInput('01.02')"></div>
+                            </div>
+                </div> -->
         </div>
     </div>
     <div class="modalContainer" id="modal">
