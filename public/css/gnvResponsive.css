@@ -1,9 +1,11 @@
 @media screen and (max-width: 375px){
+
+    /* conteúdo do cabeçalho  */
     .headerMain{
         width:100%;
     }
     .navbarMain{
-        max-width: 358px;
+        max-width: 375px;
         padding: 0px 12px 0px 5px;
         position: fixed;
         
@@ -22,7 +24,7 @@
     }
 
     .containerItens{
-        width: 360px;
+        width: 375px;
     }
     
     .identifierDoc, .infoClime{
@@ -30,17 +32,29 @@
     }
 
     .containerMobile{
-        display: flex;
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .infosBasic{
-        width: 360px;
+        width: 376px;
         display: flex;
+        align-items: center;
+        justify-content: center;
         flex-direction: column;
     }
     .basics{
+        width: 375px;
         display: flex;
+        align-items: center;
+        padding-left: 18px;
+        border: 1px solid #000;
+
+    }
+    .basic{
+        border-top: none;
     }
     .dateMobile, .boardMobile, .idOsMobile, .pressureMobile{
         display: flex;
@@ -48,14 +62,22 @@
         justify-content: center;
         font-family: 'Roboto';
     }
-   
+    
     .dateMobile, .idOsMobile{
         margin-left: 20px;
+        border-right: 1px solid #000;
+    }
+    .boardMobile{
+        padding-left: 12px;
     }
     #dateDoc, #boardDoc, #osDoc,
     #pressureDoc, #humidityDoc, #temperatureDoc{
        width: 105px;
 
+    }
+
+    #osDoc{
+        margin-right: 12px;
     }
     
    .pressureMobile{
@@ -63,5 +85,53 @@
    }
     #pressureDoc{
         width: 80px;
+    }
+
+
+    /* Conteúdo Dos Itens  */
+   
+    .boxIdentifier{
+        width: 340px;
+        border: 1px solid #000;
+    }
+
+    .numberBox{
+        padding-left: 14px;
+    }
+
+    .descriptionItens{
+        margin-top: 13px;
+        padding: 0px 14px;
+        width: 365px;
+        border: none;
+    }
+
+    .itens{
+        width: 340px;
+        border: 1px solid #000;
+       border-top: none;
+    }
+    .groupItens{
+        width: 325px;
+    }
+
+    .boxSelect select{
+        width: 45px;
+    }
+    .inputNCValue {
+        width: 290px;
+
+    }
+
+    .modalContainer{
+        max-width: 375px;
+        height: 100%;
+    }
+
+    .modal{
+        width: 80%;
+    }
+    .ncId{
+        width: 60px;
     }
 }

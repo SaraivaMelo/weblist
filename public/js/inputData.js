@@ -1,3 +1,4 @@
+
 class NaoConformidade{
     constructor(){
         this.idNC = 0;
@@ -9,6 +10,15 @@ class NaoConformidade{
     getId(id){
        
         let result = document.getElementById(id).value  
+        
+        
+        
+        
+        if(result == "-" || result == "ND" || result =="NA"){
+         
+                this.saveData(id, result)
+        }
+
 
         if(result == "NC"){
             let icon = document.querySelector(`[key="${id}"]`)
@@ -48,6 +58,13 @@ class NaoConformidade{
     updateModal(data){
             this.cleanModal();
             data.forEach( item => this.show(item));
+
+            data.forEach( (data) =>{
+                let dataId = data.idItem
+                let dataDesc = data.description
+                this.saveData(dataId, dataDesc)
+            });
+           
     }
 
 
@@ -96,7 +113,10 @@ class NaoConformidade{
             ncInsert.removeChild(ncInsert.lastChild);
         }
     }
- 
+    
+    saveData(itemId, itemRes){
+        console.log(itemId, itemRes)
+    }
 
 }
 
